@@ -1,0 +1,47 @@
+:root {
+	--text-color: #040b2a;
+	--accent-color: #86cacf;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	color: var(--text-color);
+	font-family: 'Noto Serif JP', serif;
+}
+
+#svelte {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+p {
+	line-height: 1.5;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1rem;
+}
+
+input,
+button {
+	font-size: inherit;
+	font-family: inherit;
+}
+
+button:focus:not(:focus-visible) {
+	outline: none;
+}
