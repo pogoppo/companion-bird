@@ -15,19 +15,4 @@
 </main>
 
 <style lang="scss">
-	main {
-		display: flex;
-		flex-direction: column;
-		&::before {
-			content: '';
-			display: block;
-			position: fixed;
-			z-index: 8;
-			width: 100%;
-			height: 64px;
-			background-image: url('images/wire.png');
-			background-size: contain;
-			background-position: center;
-		}
-	}
 </style>
