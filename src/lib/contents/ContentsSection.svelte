@@ -1,7 +1,3 @@
-<script context="module" lang="ts">
-	export const prerender = true;
-</script>
-
 <script lang="ts">
 	export let sectionNumber: number;
 	export let layout: string = 'normal';
@@ -40,6 +36,7 @@
 	.ContentsSection {
 		display: grid;
 		overflow: hidden;
+		position: relative;
 		width: 100%;
 		height: 100%;
 		background-color: var(--contents-background-color, #fff);
@@ -158,7 +155,7 @@
 				left: 0;
 				padding: 0.5em;
 				background-color: rgba(0, 0, 0, 0.9);
-				color: #fff;
+				color: var(--white-color);
 			}
 		}
 	}

@@ -32,6 +32,8 @@
   },
   "type": "module",
   "dependencies": {
-    "gsap": "^3.9.1"
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "gsap": "^3.9.1",
+    "svelte-fa": "^2.4.0"
   }
 }

@@ -1,11 +1,16 @@
+<script context="module" lang="ts">
+	export const prerender = true;
+</script>
+
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-	import ParakeetSection from '$lib/contents/main/ParakeetSection.svelte';
-	import GreySection from '$lib/contents/main/GreySection.svelte';
-	import CockatailSection from '$lib/contents/main/CockatailSection.svelte';
+	import SplashScreen from './_SplashScreen.svelte';
+	import ParakeetSection from './_ParakeetSection.svelte';
+	import GreySection from './_GreySection.svelte';
+	import CockatailSection from './_CockatailSection.svelte';
 
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -29,7 +34,6 @@
 			});
 			pagingTimeline.to(element, {
 				yPercent: 5,
-
 				opacity: 0.75,
 				ease: 'none'
 			});
@@ -44,8 +48,21 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>{import.meta.env.VITE_SITE_TITLE}</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;400;700&display=swap"
+		rel="stylesheet"
+	/>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@700
+					&display=swap&text={import.meta.env.VITE_SITE_TITLE}"
+		rel="stylesheet"
+	/>
 </svelte:head>
+
+<SplashScreen />
 
 <div class="MainContents">
 	{#each sections as sectionComponent, index}
@@ -53,7 +70,7 @@
 		<div
 			class="MainContents__section"
 			bind:this={sectionElements[index]}
-			style:z-index={index * -1}
+			style:z-index={20 - index}
 		>
 			<svelte:component this={sectionComponent} sectionNumber={index} />
 		</div>
@@ -62,12 +79,12 @@
 
 <style lang="scss">
 	.MainContents {
-		&::before {
+		&::after {
 			content: '';
 			display: block;
 			position: fixed;
 			top: 0;
-			z-index: 8;
+			z-index: 20;
 			width: 100%;
 			height: 64px;
 			background-image: url('images/wire.png');
@@ -83,7 +100,6 @@
 		&__section {
 			position: fixed;
 			top: 0;
-			z-index: 2;
 			width: 100%;
 			height: 100vh;
 		}
