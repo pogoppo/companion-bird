@@ -6,8 +6,8 @@
 <ContentsSection
 	{sectionNumber}
 	layout="normal"
-	nameJA="セキセイインコ"
-	nameEN="Parakeet"
+	name="セキセイインコ"
+	nameSub="Parakeet"
 	artImagePath="images/zoological-arts/Melopsittacus-undulatus.png"
 	mapImagePath="images/maps/AU.png"
 	mapLabel="原産地: オーストラリア全域"

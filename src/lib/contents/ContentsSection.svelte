@@ -1,31 +1,27 @@
 <script lang="ts">
+	import ContentsSectionHeading from '$lib/contents/ContentsSectionHeading.svelte';
+	import ContentsSectionMap from '$lib/contents/ContentsSectionMap.svelte';
+	import ContentsSectionArt from '$lib/contents/ContentsSectionArt.svelte';
+
 	export let sectionNumber: number;
 	export let layout: string = 'normal';
-	export let nameJA: string;
-	export let nameEN: string;
+	export let name: string;
+	export let nameSub: string;
 	export let artImagePath: string;
 	export let mapImagePath: string;
 	export let mapLabel: string;
-
-	const displaySectionNumber = String(sectionNumber + 1).padStart(2, '0');
 </script>
 
 <section class="ContentsSection" data-layout={layout}>
-	<figure class="ContentsSection__art">
-		<img src={artImagePath} alt={nameJA} />
-	</figure>
+	<div class="ContentsSection__art">
+		<ContentsSectionArt {artImagePath} {name} />
+	</div>
 
 	<div class="ContentsSection__article">
-		<h1 class="ContentsSection__heading" data-number={displaySectionNumber}>
-			{nameJA}
-			<span>{nameEN}</span>
-		</h1>
+		<ContentsSectionHeading {sectionNumber} {name} {nameSub} />
 
 		<div class="ContentsSection__body">
-			<figure class="ContentsSection__map">
-				<img src={mapImagePath} alt={mapLabel} />
-				<figcaption>{mapLabel}</figcaption>
-			</figure>
+			<ContentsSectionMap {mapImagePath} {mapLabel} />
 
 			<slot />
 		</div>
@@ -65,21 +61,8 @@
 
 	.ContentsSection {
 		&__art {
-			display: flex;
-			justify-content: flex-end;
 			grid-area: art;
-			margin: 0;
-			> img {
-				display: block;
-				width: 100%;
-				max-width: 960px;
-				height: auto;
-				margin: var(--contents-art-margin, 0);
-				object-fit: cover;
-				object-position: top center;
-			}
 		}
-
 		&__article {
 			display: flex;
 			flex-direction: column;
@@ -96,36 +79,6 @@
 			padding-left: 64px;
 		}
 
-		&__heading {
-			display: flex;
-			flex-direction: column;
-			position: relative;
-			width: max-content;
-			margin: 0;
-			margin-bottom: 4vh;
-			padding-left: 12vw;
-			font-size: 5vw;
-			font-weight: lighter;
-			> span {
-				align-self: flex-end;
-				margin-top: -1vw;
-				margin-right: 0.5em;
-				font-style: italic;
-				font-size: 2vw;
-				opacity: 0.8;
-			}
-			&::before {
-				content: attr(data-number) '.';
-				position: absolute;
-				top: 0;
-				left: 0;
-				color: var(--accent-color);
-				font-size: 8vw;
-				line-height: 1;
-				mix-blend-mode: multiply;
-			}
-		}
-
 		&__body {
 			&::after {
 				content: '';
@@ -136,26 +89,6 @@
 				margin: 0;
 				margin-bottom: 4vh;
 				font-size: 1vw;
-			}
-		}
-
-		&__map {
-			display: block;
-			position: relative;
-			float: right;
-			> img {
-				display: block;
-				width: 20vw;
-				height: auto;
-			}
-			> figcaption {
-				display: block;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				padding: 0.5em;
-				background-color: rgba(0, 0, 0, 0.9);
-				color: var(--white-color);
 			}
 		}
 	}

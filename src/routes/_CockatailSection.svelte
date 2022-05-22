@@ -6,8 +6,8 @@
 <ContentsSection
 	{sectionNumber}
 	layout="normal"
-	nameJA="オカメインコ"
-	nameEN="Cockatail"
+	name="オカメインコ"
+	nameSub="Cockatail"
 	artImagePath="images/zoological-arts/Nymphicus-hollandicus.png"
 	mapImagePath="images/maps/AU.png"
 	mapLabel="原産地: オーストラリア全域"

@@ -6,8 +6,8 @@
 <ContentsSection
 	{sectionNumber}
 	layout="reverse"
-	nameJA="ヨウム"
-	nameEN="Grey Parrot"
+	name="ヨウム"
+	nameSub="Grey Parrot"
 	artImagePath="images/zoological-arts/Psittacus-erithacus.png"
 	mapImagePath="images/maps/ZA-Congo.png"
 	mapLabel="原産地: アフリカ西海岸"

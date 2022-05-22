@@ -94,6 +94,7 @@
 		&__title-icon {
 			width: 120px;
 			height: auto;
+			image-rendering: -webkit-optimize-contrast;
 		}
 		&__title {
 			margin: 16px 0;
