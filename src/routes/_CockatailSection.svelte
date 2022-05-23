@@ -12,7 +12,6 @@
 	mapImagePath="images/maps/AU.png"
 	mapLabel="原産地: オーストラリア全域"
 	--contents-background-color="rgb(245 230 216 / 50%)"
-	--contents-art-margin="-10vw 0 0"
 >
 	<p>
 		何はほかどうしてもこういう活動通りというのの時が通っなです。

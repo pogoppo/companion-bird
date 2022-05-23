@@ -12,7 +12,6 @@
 	mapImagePath="images/maps/ZA-Congo.png"
 	mapLabel="原産地: アフリカ西海岸"
 	--contents-background-color="rgb(241 241 241 / 50%)"
-	--contents-art-margin="-8vw 0 0"
 >
 	<p>
 		何はほかどうしてもこういう活動通りというのの時が通っなです。

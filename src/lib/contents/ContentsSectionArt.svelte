@@ -17,7 +17,7 @@
 			width: 100%;
 			max-width: 960px;
 			height: auto;
-			margin: var(--contents-art-margin, 0);
+			margin-top: -9vw;
 			object-fit: cover;
 			object-position: top center;
 		}

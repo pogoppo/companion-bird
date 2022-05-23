@@ -12,7 +12,7 @@
 	onMount(() => {
 		const splashTimeline = gsap.timeline({
 			scrollTrigger: {
-				trigger: `.SplashScreenSection`,
+				trigger: `.SplashScreen__anchor`,
 				start: `top 0%`,
 				end: `bottom 25%`,
 				scrub: true
@@ -31,6 +31,8 @@
 			ease: 'none',
 			pointerEvents: 'none'
 		});
+
+		ScrollTrigger.refresh();
 	});
 </script>
 
@@ -59,6 +61,8 @@
 </div>
 
 <style lang="scss">
+	@use 'src/lib/scss/responsive.scss';
+
 	@keyframes hopping {
 		0% {
 			transform: translate(0, 0) scaleX(1.25);
@@ -87,6 +91,8 @@
 		position: relative;
 		width: 100%;
 		height: 100%;
+		padding: 32px;
+		box-sizing: border-box;
 		background-color: #0e4744;
 		color: var(--white-color);
 	}
@@ -99,20 +105,31 @@
 		&__title {
 			margin: 16px 0;
 			font-family: 'Kaisei Opti', serif;
-			font-size: 40px;
+			font-size: 24px;
 			font-weight: normal;
+			@include responsive.mq(L) {
+				font-size: 40px;
+			}
 		}
 		&__description {
 			margin-bottom: 32px;
 			text-align: center;
+			font-size: 0.9rem;
+			line-height: 2;
+			@include responsive.mq(L) {
+				font-size: initial;
+			}
 		}
 		&__scroll-icon {
-			font-size: 40px;
+			font-size: 32px;
 			animation-name: hopping;
 			animation-duration: 0.5s;
 			animation-timing-function: ease-in;
 			animation-iteration-count: infinite;
 			animation-direction: alternate;
+			@include responsive.mq(L) {
+				font-size: 40px;
+			}
 		}
 	}
 </style>

@@ -29,66 +29,83 @@
 </section>
 
 <style lang="scss">
+	@use 'src/lib/scss/responsive.scss';
+
 	.ContentsSection {
-		display: grid;
 		overflow: hidden;
 		position: relative;
 		width: 100%;
 		height: 100%;
 		background-color: var(--contents-background-color, #fff);
-		&[data-layout='normal'] {
-			grid-template-areas: '. .' 'art article';
-			grid-template-rows: 64px calc(100% - 64px);
-			grid-template-columns: 50% 50%;
-		}
-		&[data-layout='reverse'] {
-			grid-template-areas: '. .' 'article art';
-			grid-template-rows: 64px calc(100% - 64px);
-			grid-template-columns: 50% 50%;
-		}
 		&::before {
 			content: '';
 			display: block;
 			position: absolute;
-			z-index: 2;
+			z-index: 4;
 			width: 100%;
 			height: 100%;
 			background-image: url('images/background-paper.jpg');
 			mix-blend-mode: darken;
 			pointer-events: none;
 		}
+		@include responsive.mq(L) {
+			display: grid;
+			&[data-layout='normal'] {
+				grid-template-areas: '. . .' 'art article .';
+				grid-template-rows: 64px calc(100% - 64px);
+				grid-template-columns: 50% 1fr 64px;
+			}
+			&[data-layout='reverse'] {
+				grid-template-areas: '. . .' '. article art';
+				grid-template-rows: 64px calc(100% - 64px);
+				grid-template-columns: 64px 1fr 50%;
+			}
+		}
 	}
 
 	.ContentsSection {
 		&__art {
-			grid-area: art;
+			position: absolute;
+			top: 0;
+			@include responsive.mq(L) {
+				grid-area: art;
+				position: static;
+			}
 		}
 		&__article {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			grid-area: article;
-			width: 100%;
-			max-width: 960px;
-			box-sizing: border-box;
-		}
-		&[data-layout='normal'] &__article {
-			padding-right: 64px;
-		}
-		&[data-layout='reverse'] &__article {
-			padding-left: 64px;
+			position: absolute;
+			bottom: 0;
+			z-index: 2;
+			padding: 16px;
+			background: linear-gradient(
+					0deg,
+					var(--contents-background-color),
+					var(--contents-background-color)
+				),
+				linear-gradient(0deg, var(--contents-background-color), var(--contents-background-color));
+			@include responsive.mq(L) {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				grid-area: article;
+				position: static;
+				max-width: 960px;
+				padding: 0;
+				background: none;
+			}
 		}
 
 		&__body {
-			&::after {
-				content: '';
-				display: block;
-				clear: both;
-			}
 			> :global(p) {
 				margin: 0;
-				margin-bottom: 4vh;
-				font-size: 1vw;
+				font-size: 0.75rem;
+				@include responsive.mq(L) {
+					margin-bottom: 4vh;
+					font-size: 1vw;
+				}
+				&:not(:last-child) {
+					margin-bottom: 16px;
+				}
 			}
 		}
 	}

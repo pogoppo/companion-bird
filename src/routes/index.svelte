@@ -18,6 +18,8 @@
 	const sections = [ParakeetSection, GreySection, CockatailSection];
 
 	onMount(() => {
+		window.scrollTo(0, 0);
+
 		sectionElements.forEach((element, index) => {
 			const pagingTimeline = gsap.timeline({
 				scrollTrigger: {
@@ -44,6 +46,8 @@
 				pointerEvents: 'none'
 			});
 		});
+
+		ScrollTrigger.refresh();
 	});
 </script>
 
@@ -78,6 +82,8 @@
 </div>
 
 <style lang="scss">
+	@use 'src/lib/scss/responsive.scss';
+
 	.MainContents {
 		&::after {
 			content: '';
@@ -86,10 +92,15 @@
 			top: 0;
 			z-index: 20;
 			width: 100%;
-			height: 64px;
+			height: 48px;
 			background-image: url('images/wire.png');
-			background-size: contain;
+			background-size: cover;
 			background-position: center;
+			@include responsive.mq(L) {
+				height: 64px;
+				background-size: contain;
+				background-position: center;
+			}
 		}
 	}
 
