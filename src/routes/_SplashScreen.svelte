@@ -73,6 +73,7 @@
 	.SplashScreen {
 		&__anchor {
 			height: 100vh;
+			height: 100dvh;
 		}
 		&__body {
 			position: fixed;
@@ -80,6 +81,7 @@
 			z-index: 21;
 			width: 100%;
 			height: 100vh;
+			height: 100dvh;
 		}
 	}
 	.SplashScreenSection {

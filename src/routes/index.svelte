@@ -107,12 +107,14 @@
 	.MainContents {
 		&__anchor {
 			height: 100vh;
+			height: 100dvh;
 		}
 		&__section {
 			position: fixed;
 			top: 0;
 			width: 100%;
 			height: 100vh;
+			height: 100dvh;
 		}
 	}
 </style>
