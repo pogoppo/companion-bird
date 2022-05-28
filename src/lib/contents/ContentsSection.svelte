@@ -1,4 +1,7 @@
 <script lang="ts">
+	import Fa from 'svelte-fa/src/fa.svelte';
+	import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
+
 	import ContentsSectionHeading from '$lib/contents/ContentsSectionHeading.svelte';
 	import ContentsSectionMap from '$lib/contents/ContentsSectionMap.svelte';
 	import ContentsSectionArt from '$lib/contents/ContentsSectionArt.svelte';
@@ -10,6 +13,11 @@
 	export let artImageFileName: string;
 	export let mapImageFileName: string;
 	export let mapLabel: string;
+
+	let articleCollapseFlag = false;
+	const articleCollapseSwitch = () => {
+		articleCollapseFlag = !articleCollapseFlag;
+	};
 </script>
 
 <section class="ContentsSection" data-layout={layout}>
@@ -17,7 +25,18 @@
 		<ContentsSectionArt {artImageFileName} {name} />
 	</div>
 
-	<div class="ContentsSection__article">
+	<div
+		class="ContentsSection__article"
+		class:ContentsSection__article--collapse={articleCollapseFlag}
+	>
+		<button on:click={articleCollapseSwitch} class="ContentsSection__article-collapse-switch">
+			{#if articleCollapseFlag}
+				<Fa icon={faAngleUp} />
+			{:else}
+				<Fa icon={faAngleDown} />
+			{/if}
+		</button>
+
 		<ContentsSectionHeading {sectionNumber} {name} {nameSub} />
 
 		<div class="ContentsSection__body">
@@ -76,6 +95,8 @@
 			position: absolute;
 			bottom: 0;
 			z-index: 2;
+			max-height: 100vh;
+			max-height: 100dvh;
 			padding: 16px;
 			background: linear-gradient(
 					0deg,
@@ -83,6 +104,7 @@
 					var(--contents-background-color)
 				),
 				linear-gradient(0deg, var(--contents-background-color), var(--contents-background-color));
+			transition: max-height 0.2s ease-out;
 			@include responsive.mq(L) {
 				display: flex;
 				flex-direction: column;
@@ -92,6 +114,27 @@
 				max-width: 960px;
 				padding: 0;
 				background: none;
+			}
+			&--collapse {
+				max-height: 33vh;
+				max-height: 33dvh;
+			}
+		}
+
+		&__article-collapse-switch {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			bottom: 100%;
+			right: 0;
+			width: 48px;
+			height: 24px;
+			background: var(--accent-color);
+			font-size: 14px;
+			opacity: 0.75;
+			@include responsive.mq(L) {
+				display: none;
 			}
 		}
 
