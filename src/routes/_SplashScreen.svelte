@@ -50,8 +50,7 @@
 				{import.meta.env.VITE_SITE_TITLE}
 			</h1>
 			<p class="SplashScreenSection__description">
-				「コンパニオンバード」とは、鳥を伴侶として扱い、対等に接する事を意味します。
-				<br /> オランダ出身の鳥のイラストレーターであった彼の絵と一緒に、コンパニオンバードを見ていきましょう。
+				オランダ出身の鳥のイラストレーターであった彼の絵と一緒に、コンパニオンバード（同伴者としての鳥）を見ていきましょう。
 			</p>
 			<i class="SplashScreenSection__scroll-icon">
 				<Fa icon={faAnglesDown} />

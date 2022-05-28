@@ -8,8 +8,8 @@
 	layout="normal"
 	name="セキセイインコ"
 	nameSub="Parakeet"
-	artImagePath="images/zoological-arts/Melopsittacus-undulatus.png"
-	mapImagePath="images/maps/AU.png"
+	artImageFileName="Melopsittacus-undulatus.png"
+	mapImageFileName="AU.png"
 	mapLabel="原産地: オーストラリア全域"
 	--contents-background-color="rgb(235 227 209 / 50%)"
 >

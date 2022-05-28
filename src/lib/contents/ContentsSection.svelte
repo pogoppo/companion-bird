@@ -7,21 +7,21 @@
 	export let layout: string = 'normal';
 	export let name: string;
 	export let nameSub: string;
-	export let artImagePath: string;
-	export let mapImagePath: string;
+	export let artImageFileName: string;
+	export let mapImageFileName: string;
 	export let mapLabel: string;
 </script>
 
 <section class="ContentsSection" data-layout={layout}>
 	<div class="ContentsSection__art">
-		<ContentsSectionArt {artImagePath} {name} />
+		<ContentsSectionArt {artImageFileName} {name} />
 	</div>
 
 	<div class="ContentsSection__article">
 		<ContentsSectionHeading {sectionNumber} {name} {nameSub} />
 
 		<div class="ContentsSection__body">
-			<ContentsSectionMap {mapImagePath} {mapLabel} />
+			<ContentsSectionMap {mapImageFileName} {mapLabel} />
 
 			<slot />
 		</div>

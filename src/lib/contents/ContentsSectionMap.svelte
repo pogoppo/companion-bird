@@ -1,10 +1,11 @@
 <script lang="ts">
-	export let mapImagePath: string;
+	export let mapImageFileName: string;
 	export let mapLabel: string;
+	const imagePath = `${import.meta.env.VITE_IMAGE_PATH_BASE}/maps/${mapImageFileName}`;
 </script>
 
 <figure class="ContentsSectionMap">
-	<img class="ContentsSectionMap__image" src={mapImagePath} alt={mapLabel} />
+	<img class="ContentsSectionMap__image" src={imagePath} alt={mapLabel} />
 	<figcaption class="ContentsSectionMap__label">{mapLabel}</figcaption>
 </figure>
 
@@ -23,8 +24,9 @@
 			display: block;
 			width: 40vw;
 			height: auto;
+			object-fit: contain;
 			@include responsive.mq(L) {
-				width: 20vw;
+				width: 16vw;
 				height: auto;
 			}
 		}
@@ -40,8 +42,7 @@
 				bottom: 0;
 				left: 0;
 				margin-top: 0;
-				padding: 0.5em;
-				font-size: 1vw;
+				font-size: 1rem;
 			}
 		}
 	}

@@ -8,8 +8,8 @@
 	layout="normal"
 	name="オカメインコ"
 	nameSub="Cockatail"
-	artImagePath="images/zoological-arts/Nymphicus-hollandicus.png"
-	mapImagePath="images/maps/AU.png"
+	artImageFileName="Nymphicus-hollandicus.png"
+	mapImageFileName="AU.png"
 	mapLabel="原産地: オーストラリア全域"
 	--contents-background-color="rgb(245 230 216 / 50%)"
 >
