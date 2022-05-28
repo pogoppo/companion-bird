@@ -5,6 +5,8 @@
 	import Fa from 'svelte-fa/src/fa.svelte';
 	import { faAnglesDown } from '@fortawesome/free-solid-svg-icons';
 
+	import Header from '$lib/header/Header.svelte';
+
 	gsap.registerPlugin(ScrollTrigger);
 
 	let splashScreenElement: HTMLElement;
@@ -40,6 +42,8 @@
 	<div class="SplashScreen__anchor" />
 
 	<div class="SplashScreen__body" bind:this={splashScreenElement}>
+		<Header />
+
 		<section class="SplashScreenSection">
 			<img
 				src="/images/J.G.Keulemans.png"
@@ -50,7 +54,7 @@
 				{import.meta.env.VITE_SITE_TITLE}
 			</h1>
 			<p class="SplashScreenSection__description">
-				オランダ出身の鳥のイラストレーターであった彼の絵と一緒に、コンパニオンバード（同伴者としての鳥）を見ていきましょう。
+				オランダ出身の鳥のイラストレーターであった彼の絵と一緒に、コンパニオンバード（伴侶としての鳥）を見ていきましょう。
 			</p>
 			<i class="SplashScreenSection__scroll-icon">
 				<Fa icon={faAnglesDown} />
