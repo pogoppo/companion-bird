@@ -76,8 +76,8 @@
 	}
 	.SplashScreen {
 		&__anchor {
-			height: 100vh;
-			height: 100dvh;
+			height: 50vh;
+			height: 50dvh;
 		}
 		&__body {
 			position: fixed;
@@ -105,7 +105,6 @@
 		&__title-icon {
 			width: 120px;
 			height: auto;
-			image-rendering: -webkit-optimize-contrast;
 		}
 		&__title {
 			margin: 16px 0;

@@ -118,6 +118,10 @@
 			&--collapse {
 				max-height: 33vh;
 				max-height: 33dvh;
+				@include responsive.mq(M) {
+					max-height: 20vh;
+					max-height: 20dvh;
+				}
 			}
 		}
 

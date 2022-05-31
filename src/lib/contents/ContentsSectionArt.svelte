@@ -20,6 +20,8 @@
 </figure>
 
 <style lang="scss">
+	@use 'src/lib/scss/responsive.scss';
+
 	.ContentsSectionArt {
 		display: flex;
 		justify-content: flex-end;
@@ -29,9 +31,12 @@
 			width: 100%;
 			max-width: 960px;
 			height: auto;
-			margin-top: -9vw;
+			margin-top: -24px;
 			object-fit: cover;
 			object-position: top center;
+			@include responsive.mq(L) {
+				margin-top: -64px;
+			}
 		}
 	}
 </style>

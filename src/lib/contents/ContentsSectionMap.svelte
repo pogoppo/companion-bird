@@ -31,7 +31,7 @@
 			}
 		}
 		&__label {
-			display: block;
+			display: inline-block;
 			margin-top: 8px;
 			padding: 0.25em 0.5em;
 			background-color: rgba(0, 0, 0, 0.9);
