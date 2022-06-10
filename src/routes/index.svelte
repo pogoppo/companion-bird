@@ -11,11 +11,13 @@
 	import ParakeetSection from './_ParakeetSection.svelte';
 	import GreySection from './_GreySection.svelte';
 	import CockatailSection from './_CockatailSection.svelte';
+	import MacawSection from './_MacawSection.svelte';
+	import CockatooSection from './_CockatooSection.svelte';
 
 	gsap.registerPlugin(ScrollTrigger);
 
 	const sectionElements: HTMLElement[] = [];
-	const sections = [ParakeetSection, GreySection, CockatailSection];
+	const sections = [ParakeetSection, GreySection, CockatailSection, MacawSection, CockatooSection];
 
 	onMount(() => {
 		window.scrollTo(0, 0);
