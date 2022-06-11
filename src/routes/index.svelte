@@ -95,7 +95,7 @@
 			z-index: 20;
 			width: 100%;
 			height: 48px;
-			background-image: url('images/wire.png');
+			background-image: url('/images/wire.png');
 			background-size: cover;
 			background-position: center;
 			@include responsive.mq(L) {

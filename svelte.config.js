@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
+const dev = process.env.NODE_ENV === 'development';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,12 +10,12 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
-
-		// Override http methods in the Todo forms
-		methodOverride: {
-			allowed: ['PATCH', 'DELETE']
+		vite: {
+			ssr: {
+				noExternal: dev ? [] : ['@fortawesome/free-brands-svg-icons', '@fortawesome/free-regular-svg-icons', '@fortawesome/free-solid-svg-icons', 'gsap']
+			},
 		}
-	}
+	},
 };
 
 export default config;

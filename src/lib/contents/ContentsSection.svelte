@@ -63,7 +63,7 @@
 			z-index: 4;
 			width: 100%;
 			height: 100%;
-			background-image: url('images/background-paper.jpg');
+			background-image: url('/images/background-paper.jpg');
 			mix-blend-mode: darken;
 			pointer-events: none;
 		}

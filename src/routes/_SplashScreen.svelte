@@ -46,7 +46,7 @@
 
 		<section class="SplashScreenSection">
 			<img
-				src="/images/J.G.Keulemans.png"
+				src={`${import.meta.env.VITE_IMAGE_PATH_BASE}/J.G.Keulemans.png`}
 				alt="J.G.キューレマンス"
 				class="SplashScreenSection__title-icon"
 			/>
