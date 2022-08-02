@@ -28,8 +28,8 @@
 		margin: 0;
 		&__image {
 			display: block;
-			width: 100%;
-			max-width: 960px;
+			width: 960px;
+			max-width: 100%;
 			height: auto;
 			margin-top: -24px;
 			object-fit: cover;

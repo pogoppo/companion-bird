@@ -56,9 +56,12 @@
 			<p class="SplashScreenSection__description">
 				オランダ出身の鳥のイラストレーターであった彼の絵と一緒に、コンパニオンバード（伴侶としての鳥）を見ていきましょう。
 			</p>
-			<i class="SplashScreenSection__scroll-icon">
-				<Fa icon={faAnglesDown} />
-			</i>
+			<p class="SplashScreenSection__scroll-icon">
+				スクロールで進みます
+				<i>
+					<Fa icon={faAnglesDown} />
+				</i>
+			</p>
 		</section>
 	</div>
 </div>
@@ -77,7 +80,6 @@
 	.SplashScreen {
 		&__anchor {
 			height: 50vh;
-			height: 50dvh;
 		}
 		&__body {
 			position: fixed;
@@ -85,7 +87,6 @@
 			z-index: 21;
 			width: 100%;
 			height: 100vh;
-			height: 100dvh;
 		}
 	}
 	.SplashScreenSection {
@@ -125,14 +126,22 @@
 			}
 		}
 		&__scroll-icon {
-			font-size: 32px;
-			animation-name: hopping;
-			animation-duration: 0.5s;
-			animation-timing-function: ease-in;
-			animation-iteration-count: infinite;
-			animation-direction: alternate;
-			@include responsive.mq(L) {
-				font-size: 40px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 8px;
+			font-size: 13px;
+			> i {
+				font-size: 32px;
+				animation-name: hopping;
+				animation-duration: 0.5s;
+				animation-timing-function: ease-in;
+				animation-iteration-count: infinite;
+				animation-direction: alternate;
+				@include responsive.mq(L) {
+					font-size: 40px;
+				}
 			}
 		}
 	}

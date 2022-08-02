@@ -96,7 +96,6 @@
 			bottom: 0;
 			z-index: 2;
 			max-height: 100vh;
-			max-height: 100dvh;
 			padding: 16px;
 			background: linear-gradient(
 					0deg,
@@ -117,10 +116,8 @@
 			}
 			&--collapse {
 				max-height: 33vh;
-				max-height: 33dvh;
 				@include responsive.mq(M) {
 					max-height: 20vh;
-					max-height: 20dvh;
 				}
 			}
 		}
