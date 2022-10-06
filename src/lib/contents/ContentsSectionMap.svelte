@@ -23,6 +23,7 @@
 		&__image {
 			display: block;
 			width: 40vw;
+			max-width: 240px;
 			height: auto;
 			object-fit: contain;
 			@include responsive.mq(L) {

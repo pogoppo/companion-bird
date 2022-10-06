@@ -89,6 +89,12 @@
 			@include responsive.mq(L) {
 				grid-area: art;
 				position: static;
+				[data-layout='normal'] > & {
+					justify-self: flex-end;
+				}
+				[data-layout='reverse'] > & {
+					justify-self: flex-start;
+				}
 			}
 		}
 		&__article {
@@ -113,12 +119,15 @@
 				max-width: 960px;
 				padding: 0;
 				background: none;
+				[data-layout='normal'] > & {
+					justify-self: flex-start;
+				}
+				[data-layout='reverse'] > & {
+					justify-self: flex-end;
+				}
 			}
 			&--collapse {
 				max-height: 33vh;
-				@include responsive.mq(M) {
-					max-height: 20vh;
-				}
 			}
 		}
 
